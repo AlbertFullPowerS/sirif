@@ -1,16 +1,14 @@
-package utez.edu.mx.carnetdesesiones.utils.MySQL;
+package mx.edu.utez.sirif.utils;
 
 import jakarta.servlet.*;
-import jakarta.servlet.ServletContext;
 import jakarta.servlet.annotation.WebFilter;
-import jakarta.servlet.annotation.WebInitParam;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebFilter(urlPatterns = {"/*"})
 
@@ -19,33 +17,29 @@ public class RequestFilter implements Filter {
 
     List<String> whiteList = new ArrayList<>();
     ArrayList<String> adminURL = new ArrayList<>();
-    ArrayList<String> consultorURL = new ArrayList<>();
-    ArrayList<String> tutorURL = new ArrayList<>();
-    ArrayList<String> studentURL = new ArrayList<>();
+    ArrayList<String> RepresentativesURL = new ArrayList<>();
+    ArrayList<String> Free = new ArrayList<>();
+
     ArrayList<String> jspURL = new ArrayList<>();
+int i = 0 ;
 
 
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         //Endpoints publicos
-        whiteList.add("/user/login");
-        whiteList.add("/user/logout");
+        whiteList.add("/index.jsp");
 
         ServletContext servletContext = filterConfig.getServletContext();
-        adminURL.addAll( servletContext.getServletRegistrations().get("Admin").getMappings());
-        consultorURL.addAll( servletContext.getServletRegistrations().get("Consultor").getMappings());
-        tutorURL.addAll( servletContext.getServletRegistrations().get("Tutor").getMappings());
-        studentURL.addAll( servletContext.getServletRegistrations().get("Student").getMappings());
+       // adminURL.addAll( servletContext.getServletRegistrations().get("Admin").getMappings());
+        Free.addAll( servletContext.getServletRegistrations().get("Free").getMappings());
+       // RepresentativesURL.addAll( servletContext.getServletRegistrations().get("Consultor").getMappings());
         jspURL.addAll( servletContext.getServletRegistrations().get("jsp").getMappings());
 
 
-        adminURL.addAll(jspURL);
-        consultorURL.addAll(jspURL);
-        tutorURL.addAll(jspURL);
-        studentURL.addAll(jspURL);
-
-
+       // adminURL.addAll(jspURL);
+        Free.addAll(jspURL);
+        RepresentativesURL.addAll(jspURL);
     }
 
     @Override
@@ -57,8 +51,11 @@ public class RequestFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         String action = request.getServletPath();
         System.out.println(action);
-        if (whiteList.contains(action)|| urlAcess(action)) {
+
+        if (Free.contains(action) || urlAcess(action) || whiteList.contains(action)) {
             filterChain.doFilter(servletRequest, servletResponse);
+            System.out.println("aaa");
+
         } else {
             HttpSession session = request.getSession();
             if (session.getAttribute("user") != null) {
@@ -74,31 +71,16 @@ public class RequestFilter implements Filter {
                         }else response.sendRedirect(request.getContextPath() + "/user/logout");
                         break;
                     case "Tutor":
-                        if (tutorURL.contains(action)|| urlAcess(action)){
+                        if (RepresentativesURL.contains(action)|| urlAcess(action)){
                             filterChain.doFilter(servletRequest, servletResponse);
                         }else response.sendRedirect(request.getContextPath() + "/user/logout");
                         break;
-                    case "Student":
-                        if (studentURL.contains(action)|| urlAcess(action)){
-                            filterChain.doFilter(servletRequest, servletResponse);
-                        }else response.sendRedirect(request.getContextPath() + "/user/logout");
-                        break;
-                    case "Consultor":
-                        if (consultorURL.contains(action)|| urlAcess(action)){
-                            filterChain.doFilter(servletRequest, servletResponse);
-                        }else response.sendRedirect(request.getContextPath() + "/user/logout");
-                        break;
+
                 }
 
 
-
-
-
-
-
-
             } else {
-                response.sendRedirect(request.getContextPath() + "/user/login");
+                response.sendRedirect(request.getContextPath() + "/inicio");
             }
         }
     }
