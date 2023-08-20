@@ -32,7 +32,7 @@
                 </ul>
             </li>
 
-            <li><a href="${pageContext.request.contextPath}/page/ranking">Ranking</a></li>
+            <li><a href="${pageContext.request.contextPath}/ranking">Ranking</a></li>
             <li><a href="${pageContext.request.contextPath}/page/sesion">Iniciar Sesion</a></li>
         </div>
     </ul>

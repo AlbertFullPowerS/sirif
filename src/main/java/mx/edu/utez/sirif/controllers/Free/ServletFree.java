@@ -11,7 +11,8 @@ import java.io.IOException;
 
 @WebServlet(name = "Free",
         urlPatterns = {
-                "/inicio"
+                "/inicio",
+                "/ranking"
 
         })
 public class ServletFree extends HttpServlet {
@@ -27,6 +28,9 @@ public class ServletFree extends HttpServlet {
         {
             case "/inicio":
                 redirect="/index.jsp";
+                break;
+            case "/ranking":
+                redirect="/views/nav/Ranking.jsp";
                 break;
         }
         resp.sendRedirect(req.getContextPath()

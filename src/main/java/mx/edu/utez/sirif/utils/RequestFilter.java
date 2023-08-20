@@ -36,6 +36,8 @@ int i = 0 ;
        // RepresentativesURL.addAll( servletContext.getServletRegistrations().get("Consultor").getMappings());
         jspURL.addAll( servletContext.getServletRegistrations().get("jsp").getMappings());
 
+        System.out.println(servletContext.getServletRegistrations().get("Free").getMappings());
+
 
        // adminURL.addAll(jspURL);
         Free.addAll(jspURL);
@@ -51,6 +53,7 @@ int i = 0 ;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         String action = request.getServletPath();
         System.out.println(action);
+        System.out.println(action.substring(action.length() - 4).equals(".jsp"));
 
         if (Free.contains(action) || urlAcess(action) || whiteList.contains(action)) {
             filterChain.doFilter(servletRequest, servletResponse);
@@ -80,6 +83,12 @@ int i = 0 ;
 
 
             } else {
+                if(action.substring(action.length() - 4).equals(".jsp"))
+                {
+                    filterChain.doFilter(servletRequest, servletResponse);
+
+                }
+                else 
                 response.sendRedirect(request.getContextPath() + "/inicio");
             }
         }
