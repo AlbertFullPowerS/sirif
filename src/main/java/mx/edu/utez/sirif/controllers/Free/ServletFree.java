@@ -14,8 +14,7 @@ import java.io.IOException;
         urlPatterns = {
                 "/inicio",
                 "/ranking",
-                "/inicioSession",
-                "/Horarios",
+
 
         })
 public class ServletFree extends HttpServlet {
@@ -42,9 +41,7 @@ public class ServletFree extends HttpServlet {
             case "/inicioSession":
                 redirect="/views/nav/InicioSession.jsp";
                 break;
-            case "/Horarios":
-                redirect="/views/nav/Horarios.jsp";
-                break;
+
         }
         req.getRequestDispatcher(redirect).forward(req,resp);
 
