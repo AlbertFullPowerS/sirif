@@ -5,6 +5,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import mx.edu.utez.sirif.models.Dao.DaoRankingPlayer;
 import mx.edu.utez.sirif.models.Object.User;
 
 import java.io.IOException;
@@ -12,7 +13,8 @@ import java.io.IOException;
 @WebServlet(name = "Free",
         urlPatterns = {
                 "/inicio",
-                "/ranking"
+                "/ranking",
+                "/inicioSession"
 
         })
 public class ServletFree extends HttpServlet {
@@ -30,11 +32,18 @@ public class ServletFree extends HttpServlet {
                 redirect="/index.jsp";
                 break;
             case "/ranking":
+                req.setAttribute("listGoals",new DaoRankingPlayer().findAllGoals());
+                req.setAttribute("listAsist",new DaoRankingPlayer().findAllAsist());
+                req.setAttribute("listCard",new DaoRankingPlayer().findAllTar());
+
                 redirect="/views/nav/Ranking.jsp";
                 break;
+            case "/inicioSession":
+                redirect="/views/nav/InicioSession.jsp";
+                break;
         }
-        resp.sendRedirect(req.getContextPath()
-                + redirect);
+        req.getRequestDispatcher(redirect).forward(req,resp);
+
     }
 
     protected void doPost(jakarta.servlet.http.HttpServletRequest req, jakarta.servlet.http.HttpServletResponse resp) throws jakarta.servlet.ServletException, java.io.IOException
@@ -48,8 +57,7 @@ public class ServletFree extends HttpServlet {
                 redirect="/index.jsp";
                 break;
         }
-        resp.sendRedirect(req.getContextPath()
-                + redirect);
-        action = req.getServletPath();
+        resp.sendRedirect(req.getContextPath()+redirect);
+
     }
 }
