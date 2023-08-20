@@ -141,3 +141,47 @@ button:hover{
 
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.6);
 }
+
+body{
+  background: #000;
+}
+.box{
+    margin-top: 20px;
+    background: black;
+    width: 60%;
+    padding: 10px 50px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: auto;
+
+}
+
+
+.send {
+    background: #839A4C;
+    color:#fff;
+    outline: none;
+    border:none;
+    padding: 5px;
+    width: 30%;
+    border-radius: 5px;
+    margin: 15px auto;
+    cursor: pointer;
+    outline: none;
+    transition: 0.5s;
+}
+.send:hover{
+    background: #132a13;
+   
+    color: #fff;
+    outline: none;
+}
+
+
+
+
+
+
+
