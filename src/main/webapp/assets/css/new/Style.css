@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:20');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', cursive;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+/* NAVBAR STYLING STARTS */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #132a13;
+    color: #fff;
+    height: 90px;
+}
+
+.nav-links a {
+    color: #fff;
+}
+
+/* LOGO */
+.logo {
+    margin-top: .3rem;
+    font-size: 32px;
+    position: absolute;
+    top: 1%;
+    right: 1%;
+}
+
+/* NAVBAR MENU */
+.menu {
+    display: flex;
+    gap: 1em;
+    font-size: 18px;
+}
+
+.menu li:hover {
+    background-color: #839A4C;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    color: white;
+}
+
+.menu li {
+    padding: 5px 14px;
+}
+.menu a {
+
+    color: inherit;
+    text-decoration: none;
+}
+
+/* DROPDOWN MENU */
+.services {
+    position: relative;
+    z-index: 1;
+}
+
+.dropdown {
+    margin: .2rem 0 0 -2rem;
+    background-color: white;
+    padding: 1em 0;
+    position: absolute;
+    display: none;
+    border-radius: 8px;
+    top: 35px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.dropdown li + li {
+    margin-top: 10px;
+}
+
+.dropdown li {
+    padding: 0.5em 1em;
+    width: 8em;
+    text-align: center;
+    color: #132a13;
+}
+
+.dropdown li:hover {
+    background-color: #839A4C;
+}
+
+.services:hover .dropdown {
+    display: block;
+}
+
+/* FOOTER STYLE */
+.footer-dark {
+    padding: 10px 0;
+    color: #f0f9ff;
+    background-color: #282d32;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.footer-dark h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.footer-dark ul {
+    padding: 0;
+    list-style: none;
+    line-height: 1.6;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.footer-dark ul a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.6;
+}
+
+.footer-dark ul a:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 767px) {
+    .footer-dark .item:not(.social) {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+}
+
+.footer-dark .item.text {
+    margin-bottom: 36px;
+}
+
+@media (max-width: 767px) {
+    .footer-dark .item.text {
+        margin-bottom: 0;
+    }
+}
+
+.footer-dark .item.text p {
+    opacity: 0.6;
+    margin-bottom: 0;
+}
+
+.footer-dark .item.social {
+    text-align: center;
+}
+
+@media (max-width: 991px) {
+    .footer-dark .item.social {
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
+.footer-dark .item.social > a {
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4);
+    margin: 0 8px;
+    color: #fff;
+    opacity: 0.75;
+}
+
+.footer-dark .item.social > a:hover {
+    opacity: 0.9;
+}
+
+.footer-dark .copyright {
+    text-align: center;
+    padding-top: 24px;
+    opacity: 0.3;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+
+/*Tablas jugadores */
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    text-align: center;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.player-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: left;
+}
+
+.player-photo {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+
+/* Estilos para la tabla */
+.estilotabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Alineación del contenido al centro */
+}
+
+.estilotabla th,
+.estilotabla td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.estilotabla th {
+    background-color: #4CAF50; /* Color del encabezado de la tabla */
+    color: white;
+    font-weight: bold;
+}
+
+.estilotabla tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Color de las filas pares */
+}
+
+.estilotabla tbody tr:hover {
+    background-color: #ddd; /* Color de la fila al pasar el cursor */
+}
+
+
+
+
+
+/* Estilos para los rectángulos (tarjetas) */
+.rectangulop {
+    width: 200px;
+    height: 290px;
+    background-color: #f2f2f2;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* Estilos para los botones dentro de los rectángulos */
+.rectangulop button {
+    margin-top: 10px;
+}
+
+/* Estilos para el separador de fecha */
+.separadorp {
+    text-align: center;
+    border-bottom: 5px solid #ccc;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+/* Estilos para el botón "Agregar Partido" */
+.boton-agregar {
+    margin: 10px;
+}
