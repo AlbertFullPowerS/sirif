@@ -21,33 +21,6 @@
 		</div>
 
 
-		<div class="card">
-			<img src="America.jpg">
-			<h1>America</h1>
-		</div>
-
-
-		<div class="card">
-			<img src="">
-			<h1>Atlas</h1>
-		</div>
-
-		<div class="card">
-			<img src="">
-			<h1>Atlas</h1>
-		</div>
-
-
-		<div class="card">
-			<img src="">
-			<h1>Atlas</h1>
-		</div>
-
-		<div class="card">
-			<img src="">
-			<h1>Atlas</h1>
-		</div>
-
 
 	</div>
 
