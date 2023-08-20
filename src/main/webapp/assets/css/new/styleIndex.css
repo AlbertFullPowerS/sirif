@@ -75,8 +75,8 @@ button:hover{
     color: rgb(0, 0, 0);
     margin-left: 70px;
     font-size: 2rem;
-    padding: 3rem 4.5rem;
-    border: 2px solid black;
+    padding: 1rem 2.5rem;
+
     border-radius: .5rem;
     transition: all 1s ease;
 

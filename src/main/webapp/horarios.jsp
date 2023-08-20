@@ -1,20 +1,11 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: cheto
-  Date: 20/08/2023
-  Time: 11:30 a. m.
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="s" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <jsp:include page="/layouts/free/header.jsp"/>
-
-    <title>Title</title>
+    <jsp:include page="/layouts/header.jsp"/>
 </head>
 <body>
-<jsp:include page="/layouts/free/nav.jsp"/>
+<jsp:include page="/layouts/nav.jsp"/>
 <table id="tablaDatos" style="display: none;">
     <tr>
         <th>equipo1</th>
@@ -89,6 +80,5 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>

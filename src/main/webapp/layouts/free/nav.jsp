@@ -11,7 +11,7 @@
 
 <nav class="navbar">
     <!-- LOGO -->
-    <div class="logo"><img src="${pageContext.request.contextPath}/Imagenes/mxlogo.png" width="100px" height="75px" alt=""></img></div>
+    <div class="logo"><img src="${pageContext.request.contextPath}/assets/Imagenes/mxlogo.png" width="100px" height="75px" alt=""></img></div>
 
     <!-- NAVIGATION MENU -->
     <ul class="nav-links">
@@ -33,7 +33,7 @@
             </li>
 
             <li><a href="${pageContext.request.contextPath}/ranking">Ranking</a></li>
-            <li><a href="${pageContext.request.contextPath}/page/sesion">Iniciar Sesion</a></li>
+            <li><a href="${pageContext.request.contextPath}/inicioSession">Iniciar Sesion</a></li>
         </div>
     </ul>
 </nav>
