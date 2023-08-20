@@ -46,8 +46,10 @@ public class Team {
     public void setImagen_data(byte[] imagen_data) {
         this.imagen_data = imagen_data;
     }
+    public Team(){
 
-    public Teams(long id_team, String name_team, int members, Matchday matchday, byte[] imagen_data) {
+    }
+    public Team(long id_team, String name_team, int members, Matchday matchday, byte[] imagen_data) {
         this.id_team = id_team;
         this.name_team = name_team;
         this.members = members;

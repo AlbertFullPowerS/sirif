@@ -1,4 +1,4 @@
-package mx.edu.utez.integradora_serif.Utils;
+package mx.edu.utez.sirif.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
