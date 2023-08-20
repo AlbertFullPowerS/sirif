@@ -16,7 +16,7 @@ import java.io.IOException;
         })
 public class ServletFree extends HttpServlet {
     private String action ;
-    private String redirect = "/user/login" ;
+    private String redirect = "/inicio" ;
 
     private String email,password ;
     private User user;
@@ -40,7 +40,9 @@ public class ServletFree extends HttpServlet {
         resp.setContentType("text/html");
         switch (action)
         {
-
+            case "/inicio":
+                redirect="/index.jsp";
+                break;
         }
         resp.sendRedirect(req.getContextPath()
                 + redirect);
