@@ -39,3 +39,6 @@ main{
 	overflow: hidden;
 	margin: 15px 5px;
 }
+a{
+	text-decoration: none;
+}

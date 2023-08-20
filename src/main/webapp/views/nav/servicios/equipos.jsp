@@ -15,12 +15,13 @@
 <main>
 		<div class="contenedor">
 
+
+		<a href="">
 		<div class="card">
 			<img src="atlas.jpg">
 			<h1>Atlas</h1>
 		</div>
-
-
+		</a>
 
 	</div>
 
