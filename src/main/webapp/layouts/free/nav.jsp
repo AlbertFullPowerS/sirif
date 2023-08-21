@@ -27,8 +27,7 @@
 
                 <!-- DROPDOWN MENU -->
                 <ul class="dropdown">
-                    <li><a href="${pageContext.request.contextPath}/page/jugadores">Jugadores</a></li>
-                    <li><a href="${pageContext.request.contextPath}/page/equipos">Equipos</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Teams">Equipos</a></li>
                 </ul>
             </li>
 

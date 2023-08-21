@@ -1,5 +1,6 @@
 package mx.edu.utez.sirif.models.Dao;
 
+import mx.edu.utez.sirif.models.Object.Matches;
 import mx.edu.utez.sirif.models.Object.Player;
 import mx.edu.utez.sirif.models.Object.Ranking_players;
 import mx.edu.utez.sirif.models.Object.Team;
@@ -34,9 +35,9 @@ public class DaoRankingPlayer {
                 Ranking_players rankingPlayers1 = new Ranking_players();
                 rankingPlayers1.setGoals(rs.getInt("Goals"));
                 Player player = new Player();
-                player.setName(rs.getString("Name_player"));
-                player.setLastname(rs.getString("Surname"));
-                player.setLastname2(rs.getString("Surname2"));
+                player.setName(rs.getString("name"));
+                player.setLastname(rs.getString("lastname"));
+                player.setLastname2(rs.getString("lastname2"));
                 Team team = new Team();
                 team.setName_team(rs.getString("Name_team"));
                 player.setTeam(team);
@@ -68,9 +69,9 @@ public class DaoRankingPlayer {
                 Ranking_players rankingPlayers1 = new Ranking_players();
                 rankingPlayers1.setAssistences(rs.getInt("Assistences"));
                 Player player = new Player();
-                player.setName(rs.getString("Name_player"));
-                player.setLastname(rs.getString("Surname"));
-                player.setLastname2(rs.getString("Surname2"));
+                player.setName(rs.getString("name"));
+                player.setLastname(rs.getString("lastname"));
+                player.setLastname2(rs.getString("lastname2"));
                 Team team = new Team();
                 team.setName_team(rs.getString("Name_team"));
                 player.setTeam(team);
@@ -103,15 +104,45 @@ public class DaoRankingPlayer {
                 rankingPlayers1.setRed_card(rs.getInt("Red_card"));
                 rankingPlayers1.setYel_card(rs.getInt("Yel_card"));
                 Player player = new Player();
-                player.setName(rs.getString("Name_player"));
-                player.setLastname(rs.getString("Surname"));
-                player.setLastname2(rs.getString("Surname2"));
+                player.setName(rs.getString("name"));
+                player.setLastname(rs.getString("lastname"));
+                player.setLastname2(rs.getString("lastname2"));
                 Team team = new Team();
                 team.setName_team(rs.getString("Name_team"));
                 player.setTeam(team);
                 rankingPlayers1.setPlayer(player);
                 System.out.println(player.getName());
                 rankingPlayers.add(rankingPlayers1);
+
+            }
+            return rankingPlayers;
+        } catch (SQLException e) {
+            Logger.getLogger(DaoRankingPlayer.class.getName())
+                    .log(Level.SEVERE, "Error findAll" + e.getMessage());
+        }finally {
+            close();
+        }
+
+        return rankingPlayers;
+    }
+    public Ranking_players findStadistic() {
+        Ranking_players rankingPlayers = null;
+        try {
+            rankingPlayers = new Ranking_players();
+            conn = new MySQLConnection().connect(); // Coneccion a la base de datos
+            String query = "select *from scored_players;";//Cosulta que se manda a la base de datos
+            pstm = conn.prepareStatement(query);//Prepara la consulta para mandar el query
+            rs = pstm.executeQuery();//Trae la consulta y ejecuta el query
+
+            if (rs.next())//Verifica si hay datos
+            {
+
+
+                rankingPlayers.setGoals(rs.getInt("goals"));
+                rankingPlayers.setAssistences(rs.getInt("ass"));
+
+                rankingPlayers.setCardAll(rs.getInt("card"));
+
 
             }
             return rankingPlayers;

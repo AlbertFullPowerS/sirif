@@ -29,7 +29,7 @@
 
         <div class="box">
             <div class="px-lg-5 pt-lg-4 pb-lg-3 p-4 mb-auto w-100">
-             <img src="mxlogo.png" width="100" height="32" viewBox="0 0 100 32" fill="none" class="img-fluid"/>
+             <img src="${pageContext.request.contextPath}/assets/Imagenes/mxlogo.png" width="100" height="32" viewBox="0 0 100 32" fill="none" class="img-fluid"/>
             </div>
             <div class="align-self-center w-100 px-lg-5 py-lg-4 p-4">
                <h1 class="font-weight-bold mb-4">BIENVENIDO</h1>

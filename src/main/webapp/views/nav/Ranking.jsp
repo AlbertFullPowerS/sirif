@@ -80,7 +80,7 @@
 
 </table>
 
-<h3>Tarjetas rojas</h3>
+<h3>Tarjetas</h3>
 <table class="table-light table-striped">
 
 

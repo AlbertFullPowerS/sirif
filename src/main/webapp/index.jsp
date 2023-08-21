@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,10 +27,10 @@
                     ciudad se prepara para el inicio de su propia liga de fútbol <br> <br>
                 </p>
 
-                <a href="/representative/horarios"><button>Horarios</button></a>
+                <a href="${pageContext.request.contextPath}/Horarios"><button>Horarios</button></a>
             </div>
             <div class="col">
-                <img src="img/messi.jpg" alt="messi.jpg" class="messi">
+                <img src="${pageContext.request.contextPath}/assets/Imagenes/messi.jpg" alt="messi.jpg" class="messi">
             </div>
         </div>
     </div>
@@ -49,9 +50,9 @@
         </div>
 
         <div class="cards">
-            <button2 class="button2">32 Goles</button2>
-            <button3 class="button2">200 Faltas</button3>
-            <button4 class="button2"> 50  Asistencias</button4>
+            <button2 class="button2"><c:out value="${stadist.goals}"/> Goles</button2>
+            <button3 class="button2"><c:out value="${stadist.assistences}"/> Faltas</button3>
+            <button4 class="button2"><c:out value="${stadist.cardAll}"/>  Asistencias</button4>
         </div>
     </div>
 

@@ -1,5 +1,6 @@
 body{
 	 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	background-color: white;
 
 }
 main{
@@ -21,6 +22,7 @@ main{
 	height: 280px;
 	border:1px solid#cccc;
 	border-radius: 10px;
+	transition-duration: .4s;
 	cursor: pointer;
 	color: #132a13;
 }
@@ -28,7 +30,7 @@ main{
 	box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
 	transform: translateY(-3%);
 	border:3px solid#132a13;
-	background: ;
+
 	color: #839A4C;
 }
 .card img{
@@ -43,6 +45,12 @@ main{
 a{
 	text-decoration: none;
 }
+
+a:hover{
+	text-decoration: none;
+	color: black;
+  }
+
 
 
 *{
@@ -235,4 +243,5 @@ h1 {
     width: 100%;
     margin: 0 0 2rem 0;
   }
+
 }
