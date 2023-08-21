@@ -33,7 +33,7 @@
             </div>
             <div class="align-self-center w-100 px-lg-5 py-lg-4 p-4">
                <h1 class="font-weight-bold mb-4">BIENVENIDO</h1>
-                <form class="mb-5"  id="loginForm" action="${pageContext.request.contextPath}/page/sesion" class="needs-validation" novalidate method="post">
+                <form class="mb-5"  id="loginForm" action="${pageContext.request.contextPath}/user/login" class="needs-validation" novalidate method="post">
                     <div class="mb-4">
                          <label for="username">Nombre se usuario</label>
                         <input style="color: black; " type="text" class="form-control" name="username" id="username"

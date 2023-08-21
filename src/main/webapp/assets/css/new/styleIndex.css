@@ -1,7 +1,7 @@
 
 .estilofondo{
-    background-color: black;
-    padding: 200px 100px;
+    background-color: black; 
+    padding: 200px;
 }
 
 .estilo1{
@@ -37,18 +37,20 @@
 button{
     background-color: #839A4C;
     color: white;
-    margin-left: 100px;
+    margin-left: 200px;
     font-size: 1rem;
     padding: .5rem 2.5rem;
-    border: none;
+    border: 2px solid black;
     border-radius: 1rem;
     cursor: pointer;
     transition: all 1s ease;
+    box-shadow: .5rem .5rem 1.1rem #98e0b4,
+    -.5rem -.5rem 1.9rem #5c605c;
 }
 
 button:hover{
-    background-color: white;
-    color: #839A4C;
+    box-shadow: .5rem .5rem 1.1rem #b86868,
+    -.5rem -.5rem 1.9rem #6daf5f;
 }
 
 .estilo5{
@@ -59,7 +61,7 @@ button:hover{
 }
 
 .estilo6{
-    color:white;
+    color:white; 
     font-size: 45px;
     margin-top: 30px;
     margin-left: 385px;
@@ -75,15 +77,15 @@ button:hover{
     color: rgb(0, 0, 0);
     margin-left: 70px;
     font-size: 2rem;
-    padding: 1rem 2.5rem;
-
+    padding: 3rem 4.5rem;
+    border: 2px solid black;
     border-radius: .5rem;
     transition: all 1s ease;
 
 }
 
 .estilo8{
-    color: #6daf5f;
+    color: #6daf5f; 
     margin-top: 40px;
     margin-left: 460px;
 }
@@ -104,46 +106,25 @@ button:hover{
 .estilo11{
     color: white;
     font-size: 18px;
+    margin-top: 100px;
 }
 
 .estilo12{
     color: white;
     font-size: 18px;
+    margin-top: -188px;
+    margin-left: 440px;
 }
 
 .estilo13{
     color: white;
     font-size: 18px;
+    margin-top:-194px ;
+    margin-left: 860px;
 }
-
-.cards {
-    margin-top: 5rem;
-}
-
-.info {
-    margin-top: 10rem;
-}
-.info2 {
-    display: flex;
-    margin: 5rem 2rem;
-}
-
-.start {
-    display: flex;
-    margin-left: 5rem;
-    margin-bottom: 5rem;
-}
-
-.messi {
-    height: 20rem;
-    margin: -7rem 0 0 8rem;
-    border-radius: 1rem;
-
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.6);
-}
-
 body{
   background: #000;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .box{
     margin-top: 20px;
@@ -185,3 +166,293 @@ body{
 
 
 
+h1 {
+
+  text-align: center;
+
+}
+
+
+
+
+.blue { color: #132a13; }
+.yellow { color: #ffff; }
+
+.container th h1 {
+      font-weight: bold;
+      font-size: 1em;
+  text-align: left;
+  color: #fff;
+}
+
+.container td {
+      font-weight: normal;
+      font-size: 1em;
+  -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+       -moz-box-shadow: 0 2px 2px -2px #0E1119;
+            box-shadow: 0 2px 2px -2px #0E1119;
+}
+
+.container {
+      text-align: left;
+      overflow: hidden;
+      width: 98%;
+      margin: 0 auto;
+  display: table;
+  padding: 0 0 8em 0;
+}
+
+.container td, .container th {
+      padding-bottom: 2%;
+      padding-top: 2%;
+  padding-left:2%;  
+}
+
+/* Background-color of the odd rows */
+.container tr:nth-child(odd) {
+      background-color: #fff ;
+      color: #000;
+}
+
+/* Background-color of the even rows */
+.container tr:nth-child(even) {
+      background-color:#839A4C;
+      color: #fff;
+}
+
+.container th {
+      background-color: #132a13;
+      color: #fff;
+}
+
+.container td:first-child { color: #132a13; }
+
+.container tr:hover {
+   background-color: #ccc;
+-webkit-box-shadow: 0 6px 6px -6px #0E1119;
+       -moz-box-shadow: 0 6px 6px -6px #0E1119;
+            box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+
+@media (max-width: 800px) {
+.container td:nth-child(4),
+.container th:nth-child(4) { display: none; }
+}
+
+
+
+
+
+
+
+
+
+/*overlay*/
+        .overlay{
+            background: rgb(0, 0, 0,.3);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 6;
+            visibility: hidden;
+        }
+        .pop-up{
+            background: #ffffff;
+            box-shadow: 1px 5px 0px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            width: 500px;
+            padding: 10px;
+            color: #132a13;
+            z-index: 6; 
+            margin:10px;
+        }
+        .pop-up form{
+            margin: 17px auto;
+            width: 90%;
+            display: flex-end;
+            flex-direction: column;
+
+        }
+        .pop-up form label{
+            text-align: left;
+            margin-left: 0px;
+            font-weight: 700px;
+        }
+        .pop-up input{
+            width: 90%;
+            height: 35px;
+            margin: 5px auto;
+            border:none;
+            outline:none;
+            background-color: #DBF3DB; 
+            border-radius: 10px;
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        .pop-up input[type="submit"]{
+            width: 50%;
+            height: 30px;
+            background-color: #132a13;
+            color: #f1ffff;
+            margin-top: 30px;
+            transition: .5s;
+        }
+        .pop-up input[type="submit"]:hover{
+            background-color: #839A4C;
+        }
+        .pop-up .btn-cerrar{
+            margin: 7px;
+            font-size: 16px;
+            line-height: 16px;
+            display: block;
+            text-align: right;
+            color: #cccccc;
+            cursor: pointer;
+        }
+        .pop-up .btn-cerrar:hover{
+            color: #888;
+        }
+        .pop-up h2{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .overlay.active{
+                visibility: visible;
+                z-index: 6;
+        }
+
+        /*Boton-Modal*/
+
+
+
+/*Fin Boton-Modal*/
+
+/*Ventana Modal*/
+#btn-modal{
+    display: none;
+}
+.container-modal{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0; left: 0;
+    background: rgb(0, 0, 0,.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+#btn-modal:checked ~ .container-modal{
+    display: flex;
+}
+.content-modal{
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    flex-direction: column;
+}
+.content-modal h2{
+    margin-bottom: 15px;
+    color: #132a13;
+    text-align: center;
+}
+.content-modal form{
+    flex-direction: column;
+    width: 100%;
+}
+
+.content-modal form input{
+     width: 90%;
+     height: 33px;
+     margin: 5px auto;
+     border:none;
+     outline:none;
+     background-color: #DBF3DB; 
+     border-radius: 10px;
+     text-align: center;
+     font-size: 16px;
+     margin-bottom: 5px;
+}
+.content-modal form input[type="submit"]{
+    width: 50%;
+    height: 30px;
+    background-color: #132a13;
+    color: #f1ffff;
+    margin-top: 30px;text-align: center;
+    transition: .5s;
+
+}
+.content-modal form input[type="submit"]:hover{
+    background-color: #839A4C;
+}
+.content-modal .btn-cerrar{
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+select{
+  text-align: center;
+  width: 90%;
+  outline: none;
+  border-radius:5px;
+  border:none;
+  padding: 3px;
+  background: #DBF3DB;
+}
+.cerrar-modal{
+    width:100%;
+    height: 100vh;
+    position: absolute;
+    top:0; left: 0;
+    z-index: -1;
+}
+@media screen and (max-width:800px) {
+    .content-modal{
+        width: 90%;
+    }
+}
+/*Fin Ventana Modal*/
+
+
+.upload-button {
+  float: right;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.upload-button:hover {
+  background-color: #0056b3;
+}
+.uploaded-files {
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  max-width: 100%;
+  text-align: center;
+  /display: flex; / Cambio a flex para disposición horizontal */
+
+  /*flex-wrap: nowrap;
+  overflow-x: auto; /* Habilita el scroll horizontal */
+  /scroll-behavior: smooth; / Agrega desplazamiento suave */
+  /-webkit-overflow-scrolling: touch; / Mejora el rendimiento en dispositivos táctiles */
+}
+
+.uploaded-files > div {
+  margin-right: 10px; /* Espacio entre las imágenes */
+}

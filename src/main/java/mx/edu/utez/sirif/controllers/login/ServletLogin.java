@@ -66,7 +66,7 @@ public class ServletLogin extends HttpServlet {
         switch (action)
         {
             case  "/user/login":
-                email = req.getParameter("email");
+                email = req.getParameter("username");
                 password = req.getParameter("password");
                 try {
                     User user = new DaoUser().login(email, password);
@@ -74,14 +74,14 @@ public class ServletLogin extends HttpServlet {
                     {
                         session = req.getSession();
                         session.setAttribute("user", user);
-
-                        switch (user.getClass().getSimpleName())
+                        System.out.println(user.getRole());
+                        switch (user.getRole())
                         {
                             case "Admin":
 
                                 User admin =  user;
                                 req.setAttribute("user",admin);
-                                redirect = "/admin/panel";
+                                redirect = "/admin/inicio";
                                 break;
                             case "Representative":
                                 Representatives representatives = (Representatives) user;
