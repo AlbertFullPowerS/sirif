@@ -5,6 +5,7 @@ import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import mx.edu.utez.sirif.models.Object.User;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,6 +18,8 @@ public class RequestFilter implements Filter {
 
     List<String> whiteList = new ArrayList<>();
     ArrayList<String> adminURL = new ArrayList<>();
+    ArrayList<String> userURL = new ArrayList<>();
+
     ArrayList<String> RepresentativesURL = new ArrayList<>();
     ArrayList<String> Free = new ArrayList<>();
 
@@ -31,7 +34,9 @@ int i = 0 ;
         whiteList.add("/index.jsp");
 
         ServletContext servletContext = filterConfig.getServletContext();
-       // adminURL.addAll( servletContext.getServletRegistrations().get("Admin").getMappings());
+       adminURL.addAll( servletContext.getServletRegistrations().get("Admin").getMappings());
+        userURL.addAll( servletContext.getServletRegistrations().get("user").getMappings());
+
         Free.addAll( servletContext.getServletRegistrations().get("Free").getMappings());
        // RepresentativesURL.addAll( servletContext.getServletRegistrations().get("Consultor").getMappings());
         jspURL.addAll( servletContext.getServletRegistrations().get("jsp").getMappings());
@@ -39,7 +44,7 @@ int i = 0 ;
         System.out.println(servletContext.getServletRegistrations().get("Free").getMappings());
 
 
-       // adminURL.addAll(jspURL);
+      adminURL.addAll(jspURL);
         Free.addAll(jspURL);
         RepresentativesURL.addAll(jspURL);
     }
@@ -55,18 +60,18 @@ int i = 0 ;
         System.out.println(action);
         System.out.println(action.substring(action.length() - 4).equals(".jsp"));
 
-        if (Free.contains(action) || urlAcess(action) || whiteList.contains(action)) {
+        if (Free.contains(action) || urlAcess(action) || whiteList.contains(action) || userURL.contains(action)) {
             filterChain.doFilter(servletRequest, servletResponse);
-            System.out.println("aaa");
+
 
         } else {
             HttpSession session = request.getSession();
             if (session.getAttribute("user") != null) {
 
 
-
-                System.out.println(session.getAttribute("user").getClass().getSimpleName());
-                switch (session.getAttribute("user").getClass().getSimpleName())
+                    User user = (User) session.getAttribute("user");
+                System.out.println(user.getRole());
+                switch (user.getRole())
                 {
                     case "Admin":
                         if (adminURL.contains(action)  || urlAcess(action)){
