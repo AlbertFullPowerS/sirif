@@ -1,10 +1,10 @@
 body{
-	 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-	background-color: white;
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: white;
 
 }
 main{
-	margin-top: 20px;
+    margin-top: 20px;
 }
 .contenedor{
   display: grid;
@@ -14,42 +14,84 @@ main{
   margin: auto;
 }
 .card{
-	text-align: center;
-	background: #fff;
-	justify-content: center;
-	align-items: center;
-	width: 230px;
-	height: 280px;
-	border:1px solid#cccc;
-	border-radius: 10px;
-	transition-duration: .4s;
-	cursor: pointer;
-	color: #132a13;
+    text-align: center;
+    background: #fff;
+    justify-content: center;
+    align-items: center;
+    width: 230px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border:1px solid#cccc;
+    border-radius: 10px;
+    transition-duration: .4s;
+    cursor: pointer;
+    color: #132a13;
 }
 .card:hover{
-	box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
-	transform: translateY(-3%);
-	border:3px solid#132a13;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+    transform: translateY(-3%);
+    border:3px solid#132a13;
 
-	color: #839A4C;
+    color: #839A4C;
 }
 .card img{
-	width: 50%;
-	height: 50%;
-	border-radius: 50%;
-	padding: 0px;
-	overflow: hidden;
-	margin: 15px 5px;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    padding: 0px;
+    overflow: hidden;
+    margin: 15px 5px;
 }
 
 a{
-	text-decoration: none;
+    text-decoration: none;
 }
 
 a:hover{
-	text-decoration: none;
-	color: black;
+    text-decoration: none;
+    color: black;
   }
+
+.actions{
+display: flex;
+width: 100%;
+flex-direction: column;
+text-align: center;
+justify-content: center;
+align-items: center;
+}
+.drop{
+  margin: 5px auto;
+  background: #839A4C;
+  color: white;
+  border:none;
+  padding: 5px;
+  width: 30%;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .5s;
+}
+.update{
+  width: 30%;
+  margin: 5px auto;
+  background: #839A4C;
+  color: white;
+  border:none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .5s;
+}
+.update:hover{
+  background: #fff;
+  color: #132a13;
+  border:2px solid#839A4C;
+}
+.drop:hover{
+  background:red;
+}
 
 
 
@@ -92,8 +134,8 @@ h1 {
 .container{
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-	-webkit-perspective: 1000px;
-	        perspective: 1000px;
+    -webkit-perspective: 1000px;
+            perspective: 1000px;
 }
 
 .front,
@@ -101,20 +143,20 @@ h1 {
   background-size: cover;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.25);
   border-radius: 10px;
-	background-position: center;
-	-webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-	transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-	-o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-	transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-	transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-	-webkit-backface-visibility: hidden;
-	        backface-visibility: hidden;
-	text-align: center;
-	min-height: 280px;
-	height: auto;
-	border-radius: 10px;
-	color: #fff;
-	font-size: 1.5rem;
+    background-position: center;
+    -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    text-align: center;
+    min-height: 280px;
+    height: auto;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.5rem;
 }
 
 .back{
@@ -122,7 +164,7 @@ h1 {
 }
 
 .front:after{
-	position: absolute;
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
