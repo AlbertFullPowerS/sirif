@@ -20,7 +20,7 @@
         <div class="menu">
 
             <li><a href="${pageContext.request.contextPath}/page/inicio">Inicio</a></li>
-            <li><a href="${pageContext.request.contextPath}/matchday/matchdays">Horarios</a></li>
+            <li><a href="${pageContext.request.contextPath}/Horarios">Horarios</a></li>
 
             <li class="services">
                 <span>Servicios</span>
