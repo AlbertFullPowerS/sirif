@@ -7,6 +7,26 @@ public class Ranking_players {
     private int goals;
     private int assistences;
     private Player player;
+    private int  cardAll ;
+
+    public Ranking_players(int id_ranking, int red_card, int yel_card, int goals, int assistences, Player player, int cardAll) {
+        this.id_ranking = id_ranking;
+        this.red_card = red_card;
+        this.yel_card = yel_card;
+        this.goals = goals;
+        this.assistences = assistences;
+        this.player = player;
+        this.cardAll = cardAll;
+    }
+
+    public int getCardAll() {
+        return cardAll;
+    }
+
+    public void setCardAll(int cardAll) {
+        this.cardAll = cardAll;
+    }
+
     public Ranking_players(){
 
     }

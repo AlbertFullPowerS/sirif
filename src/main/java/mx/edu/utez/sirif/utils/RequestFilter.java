@@ -97,6 +97,7 @@ public boolean urlAcess (String s){
         if (s.substring(s.length() - 4).equals(".css")
                 || s.substring(s.length() - 3).equals(".js")
                 || s.substring(s.length() - 4).equals(".png")
+                || s.substring(s.length() - 4).equals(".jpg")
                 || s.substring(s.length() - 4).equals(".ttf")
                 || s.substring(s.length() - 4).equals(".ico")) return true;
     return false;

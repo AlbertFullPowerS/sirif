@@ -6,23 +6,29 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="s" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
-    <title>Title</title>
+	<jsp:include page="/layouts/free/header.jsp"/>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/new/servicios.css"/>
+
+	<title>Title</title>
 </head>
 <body>
+<jsp:include page="/layouts/free/nav.jsp"/>
+
 <main>
 		<div class="contenedor">
 
-
+<c:forEach var="team" items="${teams}" varStatus="s">
 		<a href="">
 		<div class="card">
 			<img src="atlas.jpg">
-			<h1>Atlas</h1>
+			<span style="font-size: .8rem"><c:out value="${team.name_team}"/></span>
 		</div>
 		</a>
-
+</c:forEach>
 	</div>
 
 	</main>

@@ -5,7 +5,9 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import mx.edu.utez.sirif.models.Dao.DaoMatches;
 import mx.edu.utez.sirif.models.Dao.DaoRankingPlayer;
+import mx.edu.utez.sirif.models.Dao.DaoTeams;
 import mx.edu.utez.sirif.models.Object.User;
 
 import java.io.IOException;
@@ -14,6 +16,9 @@ import java.io.IOException;
         urlPatterns = {
                 "/inicio",
                 "/ranking",
+                "/Horarios",
+                "/Teams",
+                "/inicioSession"
 
 
         })
@@ -29,17 +34,27 @@ public class ServletFree extends HttpServlet {
         switch (action)
         {
             case "/inicio":
+                req.setAttribute("stadist",new DaoRankingPlayer().findStadistic());
+
                 redirect="/index.jsp";
                 break;
             case "/ranking":
                 req.setAttribute("listGoals",new DaoRankingPlayer().findAllGoals());
                 req.setAttribute("listAsist",new DaoRankingPlayer().findAllAsist());
                 req.setAttribute("listCard",new DaoRankingPlayer().findAllTar());
-
                 redirect="/views/nav/Ranking.jsp";
                 break;
             case "/inicioSession":
                 redirect="/views/nav/InicioSession.jsp";
+                break;
+            case "/Horarios":
+                req.setAttribute("matches",new DaoMatches().findAll());
+
+                redirect="/views/nav/Horarios.jsp";
+                break;
+            case "/Teams":
+                req.setAttribute("teams",new DaoTeams().findAll());
+                redirect="/views/nav/servicios/equipos.jsp";
                 break;
 
         }
