@@ -9,9 +9,9 @@
     <link rel="shortcut icon" href="../Imagenes/mxlogo.png" />
     <link rel="stylesheet" href="../CSS/styleIndex.css"/>
     <title>Inicio</title>
-    <jsp:include page="/layouts/header.jsp"/>
+    <jsp:include page="/layouts/free/header.jsp"/>
 </head>
-<jsp:include page="/layouts/navadmin.jsp"/>
+<jsp:include page="/layouts/free/nav.jsp"/>
 <body>
 
 
@@ -46,7 +46,7 @@
     </div>
 
 </div>
-<jsp:include page="/layouts/footer.jsp"/>
+<jsp:include page="/layouts/free/footer.jsp"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 </body>

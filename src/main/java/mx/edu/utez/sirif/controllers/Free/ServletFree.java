@@ -6,11 +6,14 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import mx.edu.utez.sirif.models.Dao.DaoMatches;
+import mx.edu.utez.sirif.models.Dao.DaoPlayer;
 import mx.edu.utez.sirif.models.Dao.DaoRankingPlayer;
 import mx.edu.utez.sirif.models.Dao.DaoTeams;
+import mx.edu.utez.sirif.models.Object.Player;
 import mx.edu.utez.sirif.models.Object.User;
 
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "Free",
         urlPatterns = {
@@ -25,6 +28,8 @@ import java.io.IOException;
 public class ServletFree extends HttpServlet {
     private String action ;
     private String redirect = "/inicio" ;
+    private List<Player> players;
+    private long id ;
 
     private String email,password ;
     private User user;
@@ -53,6 +58,10 @@ public class ServletFree extends HttpServlet {
                 redirect="/views/nav/Horarios.jsp";
                 break;
             case "/Teams":
+                if ( (req.getParameter("id") != null))
+                    req.setAttribute("players",new DaoPlayer().findAllTeam(Long.parseLong(req.getParameter("id"))));
+
+
                 req.setAttribute("teams",new DaoTeams().findAll());
                 redirect="/views/nav/servicios/equipos.jsp";
                 break;
